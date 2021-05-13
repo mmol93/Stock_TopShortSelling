@@ -55,7 +55,7 @@ print("****공매도 비중 = 공매도 거래대금/총거래대금 = 오늘 �
 print("****높을수록 하장락일 때 주의가 필요함****")
 check(KOSPIShortVolume, KOSDAQShortVolume)
 print("거래 비중 기준 삭제 끝")
-print("\n ***검색된 날짜 : " + todayInput + "***")
+print("***검색된 날짜 : " + todayInput + "***\n")
 
 # volume에 데이터가 기록되는 날짜가 balance보다 빠르다
 # 에: 20211011에는 volume에 데이터가 있을 수 있지만 balance에는 없을 수 있다
@@ -75,4 +75,4 @@ print("**** 공매도 잔고/상장주식수 ****")
 print("**** 높을수록 언제 떨어질지 모름 ****")
 check(KOSPIShortBalance, KOSDAQShortBalance)
 print("잔고 기준 삭제 끝")
-print("\n ***검색된 날짜 : " + todayInput + "***")
+print("***검색된 날짜 : " + todayInput + "***")
