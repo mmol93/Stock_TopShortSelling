@@ -70,8 +70,9 @@ while KOSPIShortBalance.size == 0:
     KOSPIShortBalance = stock.get_shorting_balance_top50(todayInput, "KOSPI")
 
 KOSDAQShortBalance = stock.get_shorting_balance_top50(todayInput, "KOSDAQ")
-print("****<잔고 기준>****")
-print("****높을수록 언제 떨어질지 모름****")
+print("****<잔고 비중 기준>****")
+print("**** 공매도 잔고/상장주식수 ****")
+print("**** 높을수록 언제 떨어질지 모름 ****")
 check(KOSPIShortBalance, KOSDAQShortBalance)
 print("잔고 기준 삭제 끝")
 print("\n ***검색된 날짜 : " + todayInput + "***")
