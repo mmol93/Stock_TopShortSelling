@@ -12,6 +12,8 @@ def check(KOSPIShort, KOSDAQShort):
     KOSPIStockNumber = KOSPIShort.index
     KOSDAQStockNumber = KOSDAQShort.index
 
+    i = 1
+    j = 1
     # 코스피 부분 처리
     print("<코스피 종목>")
     for ticker in KOSPIStockNumber:
@@ -19,7 +21,8 @@ def check(KOSPIShort, KOSDAQShort):
         stockName = stock.get_market_ticker_name(ticker)
         # 해당 종목을 엑셀에서 검색하여 일치하는거 있으면 삭제하기
         controlExcel.delete_stock(stockName)
-        print(stockName)
+        print(str(i) +". "+ stockName)
+        i += 1
     print("---------------------------------------------")
 
     # 코스닥 부분 처리
@@ -29,7 +32,8 @@ def check(KOSPIShort, KOSDAQShort):
         stockName = stock.get_market_ticker_name(ticker)
         # 해당 종목을 엑셀에서 검색하여 일치하는거 있으면 삭제하기
         controlExcel.delete_stock(stockName)
-        print(stockName)
+        print(str(j) +". "+ stockName)
+        j += 1
     print("---------------------------------------------")
 
 
