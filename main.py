@@ -34,7 +34,6 @@ def check(KOSPIShort, KOSDAQShort):
         controlExcel.delete_stock(stockName)
         print(str(j) +". "+ stockName)
         j += 1
-    print("---------------------------------------------")
 
 
 # 오늘 날짜 가져오기(연,월,일)
@@ -60,6 +59,7 @@ print("****높을수록 하장락일 때 주의가 필요함****")
 check(KOSPIShortVolume, KOSDAQShortVolume)
 print("거래 비중 기준 삭제 끝")
 print("***검색된 날짜 : " + todayInput + "***\n")
+print("---------------------------------------------")
 
 # volume에 데이터가 기록되는 날짜가 balance보다 빠르다
 # 에: 20211011에는 volume에 데이터가 있을 수 있지만 balance에는 없을 수 있다
