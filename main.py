@@ -4,6 +4,8 @@ import controlExcel
 
 # 참조 https://github.com/sharebook-kr/pykrx
 
+#balance에서 '비중' 컬럼이 중요한데 어떻게 넣을지 고민중...
+
 # DataFrame의 티커에서 종목이름으로 변경하기
 def check(KOSPIShort, KOSDAQShort):
     # DataFrame의 인덱스 자체가 종목 코드임
@@ -49,9 +51,11 @@ while KOSPIShortVolume.size == 0:
 KOSDAQShortVolume = stock.get_shorting_volume_top50(todayInput, "KOSDAQ")
 # 종목 코드를 바탕으로 종목명을 알아내고 엑셀에서 해당 종목이 있을 경우 삭제
 print("****<거래 비중 기준>****")
+print("****공매도 비중 = 공매도 거래대금/총거래대금 = 오늘 하루 거래 비중에서 공매도가 몇 %인가****")
+print("****높을수록 하장락일 때 주의가 필요함****")
 check(KOSPIShortVolume, KOSDAQShortVolume)
 print("거래 비중 기준 삭제 끝")
-print("\n **검색 날짜 : " + todayInput + "***")
+print("\n ***검색된 날짜 : " + todayInput + "***")
 
 # volume에 데이터가 기록되는 날짜가 balance보다 빠르다
 # 에: 20211011에는 volume에 데이터가 있을 수 있지만 balance에는 없을 수 있다
@@ -67,6 +71,7 @@ while KOSPIShortBalance.size == 0:
 
 KOSDAQShortBalance = stock.get_shorting_balance_top50(todayInput, "KOSDAQ")
 print("****<잔고 기준>****")
+print("****높을수록 언제 떨어질지 모름****")
 check(KOSPIShortBalance, KOSDAQShortBalance)
 print("잔고 기준 삭제 끝")
-print("\n **검색 날짜 : " + todayInput + "***")
+print("\n ***검색된 날짜 : " + todayInput + "***")
