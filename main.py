@@ -11,6 +11,7 @@ def check(KOSPIShort, KOSDAQShort):
     KOSDAQStockNumber = KOSDAQShort.index
 
     # 코스피 부분 처리
+    print("<코스피 종목>")
     for ticker in KOSPIStockNumber:
         # 티커를 종목명으로 출력
         stockName = stock.get_market_ticker_name(ticker)
@@ -20,6 +21,7 @@ def check(KOSPIShort, KOSDAQShort):
     print("---------------------------------------------")
 
     # 코스닥 부분 처리
+    print("<코스닥 종목>")
     for ticker in KOSDAQStockNumber:
         # 티커를 종목명으로 출력
         stockName = stock.get_market_ticker_name(ticker)
