@@ -22,6 +22,14 @@ load_sheet = load_wb['매수추천']
 StockList = []  # 인공지능 종목 리스트
 webPageList = []  # 인공지능 추천가
 
+## *** 엑셀 데이터 저장
+def saveExcell(load_wb):
+    # 엑셀이 열려있을 때 저장하려고 할 경우 에러 메시지 출력
+    try:
+        excell_file = load_wb
+        excell_file.save(path)
+    except PermissionError:
+        print("열려있는 AI_List.xlsx 엑셀을 닫으세요")
 
 # 같은 이름의 종목명 있는지 찾아서 삭제하기
 def delete_stock(stock):
@@ -34,3 +42,5 @@ def delete_stock(stock):
         # 종목명이 일치하면 행 삭제
         if stock_name == stock:
             load_sheet.delete_rows(i)
+            # 행 삭제 후 저장하기
+            saveExcell(load_wb)
