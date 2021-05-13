@@ -41,7 +41,6 @@ def delete_stock(stock):
             break
         # 종목명이 일치하면 행 삭제
         if stock_name == stock:
-            print(stock_name + "삭제")
             load_sheet.delete_rows(i)
             # 행 삭제 후 저장하기
             saveExcell(load_wb)
