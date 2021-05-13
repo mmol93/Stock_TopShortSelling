@@ -33,7 +33,7 @@ def saveExcell(load_wb):
 
 # 같은 이름의 종목명 있는지 찾아서 삭제하기
 def delete_stock(stock):
-    for i in range(2, 100):
+    for i in range(2, 200):
         # 'B2'부터 'B100'까지 읽기
         stock_name = load_sheet.cell(i, 2).value
         # 셀 비었으면 그대로 종료
@@ -41,6 +41,7 @@ def delete_stock(stock):
             break
         # 종목명이 일치하면 행 삭제
         if stock_name == stock:
+            print(stock_name + "삭제")
             load_sheet.delete_rows(i)
             # 행 삭제 후 저장하기
             saveExcell(load_wb)
