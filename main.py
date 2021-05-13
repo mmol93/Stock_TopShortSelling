@@ -34,6 +34,7 @@ def check(KOSPIShort, KOSDAQShort):
         controlExcel.delete_stock(stockName)
         print(str(j) +". "+ stockName)
         j += 1
+    print("---------------------------------------------")
 
 
 # 오늘 날짜 가져오기(연,월,일)
