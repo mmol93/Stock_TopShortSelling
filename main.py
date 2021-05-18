@@ -4,8 +4,6 @@ import controlExcel
 
 # 참조 https://github.com/sharebook-kr/pykrx
 
-#balance에서 '비중' 컬럼이 중요한데 어떻게 넣을지 고민중...
-
 # DataFrame의 티커에서 종목이름으로 변경하기
 def check(KOSPIShort, KOSDAQShort):
     # DataFrame의 인덱스 자체가 종목 코드임
